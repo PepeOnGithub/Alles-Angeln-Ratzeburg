@@ -1,444 +1,465 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="auto">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Alles Angeln in Ratzeburg: Angelzubehör, Lebendköder, Erlaubnisscheine, Öffnungszeiten und Kontakt auf einer kompakten Seite."
+      content="Alles Angeln in Ratzeburg – Inh. Malte Stapelfeldt. Angelzubehör, Lebendköder, Erlaubnisscheine für Ratzeburger Seen, Trave und Kleinen Mustiner See. Öffnungszeiten, Anfahrt und Kontakt."
     >
-    <title>Alles Angeln Ratzeburg</title>
+    <meta name="theme-color" content="#0b2330">
+    <meta property="og:title" content="Alles Angeln Ratzeburg">
+    <meta property="og:description" content="Angelgeschäft in Ratzeburg – Köder, Zubehör und Erlaubnisscheine. Große Wallstr. 4.">
+    <meta property="og:type" content="website">
+    <title>Alles Angeln Ratzeburg · Angelgeschäft & Erlaubnisscheine</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+
     <style>
+      /* ============ Theme tokens ============ */
       :root {
+        --navy: #0b2330;
+        --teal: #0e5c63;
+        --teal-2: #157f86;
+        --water: #1e6fa8;
+        --gold: #e7b53a;
+        --gold-soft: #f4d98a;
+        --signal: #e2492f;
+
+        /* Light (default) */
+        --bg: #f3f1e9;
+        --bg-2: #e9e4d6;
+        --surface: #ffffff;
+        --surface-2: #fbfaf5;
+        --ink: #0f2630;
+        --muted: #586a6d;
+        --line: #e3ded0;
+        --line-strong: #d2ccba;
+        --brand: var(--teal);
+        --brand-ink: #0c4248;
+        --accent: var(--gold);
+        --ring: rgba(14, 92, 99, 0.4);
+
+        /* Glass */
+        --glass: rgba(255, 255, 255, 0.55);
+        --glass-2: rgba(255, 255, 255, 0.38);
+        --glass-border: rgba(255, 255, 255, 0.7);
+        --glass-blur: 18px;
+
+        --shadow-sm: 0 4px 16px rgba(11, 35, 48, 0.08);
+        --shadow-md: 0 18px 44px rgba(11, 35, 48, 0.13);
+        --shadow-lg: 0 34px 90px rgba(11, 35, 48, 0.2);
+        --header-bg: rgba(243, 241, 233, 0.6);
+
+        /* Motion */
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        /* Fluid space scale */
+        --space-section: clamp(64px, 9vw, 128px);
+        --radius: clamp(16px, 2vw, 22px);
         color-scheme: light;
-        --ink: #17201c;
-        --muted: #5a665f;
-        --paper: #ffffff;
-        --panel: #ffffff;
-        --line: #dbe3f4;
-        --brand-blue: #1e4ab1;
-        --brand-blue-dark: #153679;
-        --brand-blue-soft: #eef3ff;
-        --accent: #f0c64a;
-        --deep: #1e4ab1;
-        --shadow: 0 18px 48px rgba(30, 74, 177, 0.14);
       }
 
-      * {
-        box-sizing: border-box;
+      :root[data-theme="dark"] {
+        --bg: #06121a;
+        --bg-2: #0a1a22;
+        --surface: #0e2027;
+        --surface-2: #102932;
+        --ink: #eaf3f1;
+        --muted: #9fb6b8;
+        --line: rgba(255, 255, 255, 0.09);
+        --line-strong: rgba(255, 255, 255, 0.16);
+        --brand: #4fd0d8;
+        --brand-ink: #bfeef0;
+        --accent: var(--gold-soft);
+        --ring: rgba(79, 208, 216, 0.45);
+        --glass: rgba(18, 41, 51, 0.55);
+        --glass-2: rgba(14, 32, 39, 0.45);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.45);
+        --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.55);
+        --shadow-lg: 0 36px 100px rgba(0, 0, 0, 0.65);
+        --header-bg: rgba(6, 18, 26, 0.55);
+        color-scheme: dark;
       }
 
-      html {
-        scroll-behavior: smooth;
+      @media (prefers-color-scheme: dark) {
+        :root[data-theme="auto"] {
+          --bg: #06121a; --bg-2: #0a1a22; --surface: #0e2027; --surface-2: #102932;
+          --ink: #eaf3f1; --muted: #9fb6b8; --line: rgba(255,255,255,0.09); --line-strong: rgba(255,255,255,0.16);
+          --brand: #4fd0d8; --brand-ink: #bfeef0; --accent: var(--gold-soft); --ring: rgba(79,208,216,0.45);
+          --glass: rgba(18,41,51,0.55); --glass-2: rgba(14,32,39,0.45); --glass-border: rgba(255,255,255,0.12);
+          --shadow-sm: 0 4px 16px rgba(0,0,0,0.45); --shadow-md: 0 20px 48px rgba(0,0,0,0.55); --shadow-lg: 0 36px 100px rgba(0,0,0,0.65);
+          --header-bg: rgba(6,18,26,0.55); color-scheme: dark;
+        }
       }
+
+      /* ============ Base ============ */
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
       body {
         margin: 0;
-        background: var(--paper);
         color: var(--ink);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        line-height: 1.62;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        background: var(--bg);
       }
 
-      a {
-        color: inherit;
+      /* Ambient animated aurora behind everything */
+      .ambient {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        background: linear-gradient(var(--bg), var(--bg-2));
+      }
+      .ambient span {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.5;
+        will-change: transform;
+      }
+      .ambient .b1 { width: 46vw; height: 46vw; left: -8vw; top: -10vw; background: color-mix(in srgb, var(--teal) 60%, transparent); animation: drift1 26s ease-in-out infinite; }
+      .ambient .b2 { width: 40vw; height: 40vw; right: -6vw; top: 18vh; background: color-mix(in srgb, var(--gold) 42%, transparent); animation: drift2 32s ease-in-out infinite; }
+      .ambient .b3 { width: 50vw; height: 50vw; left: 22vw; bottom: -22vw; background: color-mix(in srgb, var(--water) 45%, transparent); animation: drift3 38s ease-in-out infinite; }
+      @keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(8vw,6vh) scale(1.15)} }
+      @keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-7vw,9vh) scale(0.9)} }
+      @keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-6vw,-8vh) scale(1.1)} }
+
+      h1, h2, h3, .eyebrow, .brand-name, .footer .fn { font-family: Fraunces, "Iowan Old Style", Georgia, serif; }
+      a { color: inherit; }
+      img { max-width: 100%; }
+      ::selection { background: color-mix(in srgb, var(--accent) 55%, transparent); color: var(--navy); }
+      :focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; border-radius: 10px; }
+
+      .skip-link {
+        position: absolute; left: 16px; top: -60px; z-index: 60;
+        padding: 10px 16px; border-radius: 10px; background: var(--brand); color: #fff;
+        font-weight: 700; text-decoration: none; transition: top 0.25s var(--ease);
+      }
+      .skip-link:focus { top: 14px; }
+
+      .wrap { width: min(1180px, calc(100% - clamp(28px, 8vw, 110px))); margin-inline: auto; }
+
+      /* Shared glass surface */
+      .glass {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(var(--glass-blur)) saturate(1.5);
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.5);
       }
 
-      .controlbar {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        gap: 14px;
-        align-items: center;
-        padding: 10px clamp(14px, 3vw, 32px);
-        border-bottom: 1px solid rgba(30, 74, 177, 0.16);
-        background: rgba(255, 255, 255, 0.94);
-        backdrop-filter: blur(18px);
+      /* ============ Header ============ */
+      .header {
+        position: sticky; top: 0; z-index: 40;
+        display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center;
+        padding: 14px clamp(16px, 4vw, 44px);
+        border-bottom: 1px solid transparent; background: transparent;
+        transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), padding 0.4s var(--ease);
+      }
+      .header.is-stuck {
+        background: var(--header-bg);
+        border-bottom-color: var(--line);
+        box-shadow: var(--shadow-sm);
+        backdrop-filter: saturate(1.6) blur(20px);
+        -webkit-backdrop-filter: saturate(1.6) blur(20px);
+        padding-block: 9px;
       }
 
-      .brand {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        min-width: 0;
-        text-decoration: none;
-      }
-
+      .brand { display: flex; gap: 12px; align-items: center; min-width: 0; text-decoration: none; }
       .brand-logo {
-        display: block;
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
+        width: 54px; height: 54px; object-fit: contain; border-radius: 14px;
+        background: #fff; padding: 4px; box-shadow: var(--shadow-sm);
+        transition: transform 0.45s var(--ease-bounce), box-shadow 0.3s var(--ease);
+      }
+      .brand:hover .brand-logo { transform: rotate(-6deg) scale(1.08); box-shadow: var(--shadow-md); }
+      .brand-copy { min-width: 0; line-height: 1.04; }
+      .brand-name { display: block; font-weight: 900; font-size: 1.2rem; letter-spacing: 0.2px; color: var(--ink); }
+      .brand-place { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+
+      .nav { display: flex; gap: 2px; justify-content: center; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a {
+        position: relative; flex: 0 0 auto; padding: 9px 15px; border-radius: 11px;
+        color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: none; white-space: nowrap; opacity: 0.8;
+        transition: background 0.25s var(--ease), opacity 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+      }
+      .nav a::after {
+        content: ""; position: absolute; left: 15px; right: 15px; bottom: 4px; height: 2px; border-radius: 2px;
+        background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease);
+      }
+      .nav a:hover { background: color-mix(in srgb, var(--brand) 12%, transparent); opacity: 1; transform: translateY(-1px); }
+      .nav a.active { color: var(--brand); opacity: 1; }
+      .nav a.active::after { transform: scaleX(1); }
+
+      .header-actions { display: flex; gap: 9px; align-items: center; }
+      .icon-btn {
+        display: inline-grid; place-items: center; width: 44px; height: 44px;
+        border: 1px solid var(--line-strong); border-radius: 13px; background: var(--surface); color: var(--ink); cursor: pointer;
+        transition: transform 0.3s var(--ease-bounce), border-color 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease);
+      }
+      .icon-btn:hover { transform: translateY(-3px) rotate(8deg); border-color: var(--brand); color: var(--brand); }
+      .icon-btn:active { transform: scale(0.92); }
+      .icon-btn svg { width: 20px; height: 20px; }
+      .theme-toggle .moon { display: none; }
+      :root[data-theme="dark"] .theme-toggle .sun { display: none; }
+      :root[data-theme="dark"] .theme-toggle .moon { display: block; }
+      @media (prefers-color-scheme: dark) {
+        :root[data-theme="auto"] .theme-toggle .sun { display: none; }
+        :root[data-theme="auto"] .theme-toggle .moon { display: block; }
       }
 
-      .brand strong {
-        display: block;
-        line-height: 1;
+      /* ============ Buttons ============ */
+      .btn {
+        position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+        min-height: 46px; padding: 12px 22px; border: 1px solid transparent; border-radius: 13px;
+        font-weight: 700; font-size: 0.96rem; text-decoration: none; cursor: pointer; overflow: hidden;
+        transition: transform 0.3s var(--ease-bounce), box-shadow 0.3s var(--ease), filter 0.25s var(--ease);
       }
-
-      .brand-copy {
-        display: block;
-        min-width: 0;
+      .btn svg { width: 18px; height: 18px; }
+      /* shine sweep */
+      .btn::before {
+        content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+        background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+        transform: skewX(-18deg); transition: left 0.7s var(--ease);
       }
+      .btn:hover::before { left: 160%; }
+      .btn:active { transform: scale(0.96); }
+      .btn-primary { background: linear-gradient(135deg, var(--teal-2), var(--teal)); color: #fff; box-shadow: 0 12px 28px color-mix(in srgb, var(--teal) 40%, transparent); }
+      .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 38px color-mix(in srgb, var(--teal) 50%, transparent); }
+      .btn-gold { background: linear-gradient(135deg, var(--gold-soft), var(--gold)); color: #3a2c06; box-shadow: 0 12px 28px color-mix(in srgb, var(--gold) 48%, transparent); }
+      .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 18px 40px color-mix(in srgb, var(--gold) 58%, transparent); }
+      .btn-ghost { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.5); color: #fff; backdrop-filter: blur(8px); }
+      .btn-ghost:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.22); }
+      .btn-outline { background: var(--surface); border-color: var(--line-strong); color: var(--ink); }
+      .btn-outline:hover { transform: translateY(-3px); border-color: var(--brand); color: var(--brand); }
+      .call-btn { display: none; }
+      @media (min-width: 760px) { .call-btn { display: inline-flex; } }
 
-      .brand-place {
-        display: block;
-        color: var(--muted);
-        font-size: 0.8rem;
-        white-space: nowrap;
-      }
-
-      .nav {
-        display: flex;
-        gap: 6px;
-        justify-content: center;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        overflow-x: auto;
-        scrollbar-width: none;
-      }
-
-      .nav::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav a,
-      .action {
-        flex: 0 0 auto;
-        min-height: 38px;
-        padding: 9px 12px;
-        border: 1px solid transparent;
-        border-radius: 8px;
-        color: var(--deep);
-        font-size: 0.92rem;
-        font-weight: 700;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-
-      .nav a:hover {
-        border-color: var(--line);
-        background: var(--brand-blue-soft);
-      }
-
-      .action {
-        border-color: var(--brand-blue);
-        background: var(--brand-blue);
-        color: #fff;
-      }
-
+      /* ============ Hero ============ */
       .hero {
-        min-height: calc(100vh - 59px);
-        display: grid;
-        align-items: end;
-        padding: clamp(24px, 4vw, 54px);
+        position: relative; min-height: min(96vh, 900px); display: grid; align-items: center;
+        margin-top: -82px; padding: 150px clamp(16px, 4vw, 44px) 130px; isolation: isolate; overflow: hidden;
+      }
+      .hero-bg { position: absolute; inset: 0; z-index: -2; background: url("assets/hero-fishing.png") center / cover no-repeat; transform: scale(1.08); will-change: transform; }
+      .hero::after {
+        content: ""; position: absolute; inset: 0; z-index: -1;
         background:
-          linear-gradient(90deg, rgba(17, 42, 102, 0.82), rgba(30, 74, 177, 0.34) 52%, rgba(30, 74, 177, 0.08)),
-          url("assets./hero-fishing.png") center / cover;
+          radial-gradient(130% 95% at 16% 64%, rgba(3, 14, 21, 0.82), transparent 60%),
+          linear-gradient(180deg, rgba(5, 20, 28, 0.6) 0%, rgba(5, 20, 28, 0.12) 36%, rgba(5, 20, 28, 0.6) 100%);
       }
-
-      .hero-inner {
-        width: min(820px, 100%);
-        color: #fff;
-      }
+      .hero-inner { width: min(760px, 100%); color: #fff; }
 
       .eyebrow {
-        margin: 0 0 14px;
-        color: #ffffff;
-        font-size: 0.82rem;
-        font-weight: 800;
-        letter-spacing: 0;
-        text-transform: uppercase;
+        display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px;
+        padding: 8px 16px 8px 13px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 999px;
+        background: rgba(8, 24, 32, 0.42); backdrop-filter: blur(10px);
+        font-family: Inter, sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #fff;
+      }
+      .eyebrow .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 30%, transparent); animation: pulse 2.4s ease-in-out infinite; }
+      @keyframes pulse { 0%,100%{box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 30%,transparent)} 50%{box-shadow:0 0 0 8px color-mix(in srgb,var(--gold) 0%,transparent)} }
+
+      .hero h1 { margin: 0; font-weight: 900; font-size: clamp(3.2rem, 9.5vw, 7rem); line-height: 0.92; letter-spacing: -2px; text-shadow: 0 6px 50px rgba(0, 0, 0, 0.4); }
+      .hero h1 .accent { color: var(--gold-soft); font-style: italic; font-weight: 600; }
+      .hero-lead { max-width: 540px; margin: 24px 0 34px; font-size: clamp(1.06rem, 2vw, 1.3rem); color: rgba(255, 255, 255, 0.92); }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+
+      /* staggered entrance */
+      .enter { opacity: 0; transform: translateY(26px); animation: enterUp 0.9s var(--ease) forwards; }
+      .enter.d1 { animation-delay: 0.1s; }
+      .enter.d2 { animation-delay: 0.22s; }
+      .enter.d3 { animation-delay: 0.34s; }
+      .enter.d4 { animation-delay: 0.46s; }
+      @keyframes enterUp { to { opacity: 1; transform: none; } }
+
+      .status-pill {
+        display: inline-flex; align-items: center; gap: 11px; margin-top: 30px; padding: 10px 18px; border-radius: 999px;
+        background: rgba(8, 24, 32, 0.5); border: 1px solid rgba(255, 255, 255, 0.24); backdrop-filter: blur(10px);
+        font-size: 0.93rem; font-weight: 600; color: #fff;
+      }
+      .status-led { position: relative; width: 11px; height: 11px; border-radius: 50%; background: #9aa6a6; flex: 0 0 auto; }
+      .status-pill.open .status-led { background: #36d07f; }
+      .status-pill.closed .status-led { background: var(--signal); }
+      .status-pill.open .status-led::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid #36d07f; animation: ping 1.8s var(--ease) infinite; }
+      @keyframes ping { 0%{transform:scale(0.6);opacity:0.9} 80%,100%{transform:scale(1.8);opacity:0} }
+      .status-detail { color: rgba(255, 255, 255, 0.72); font-weight: 500; }
+
+      .scroll-hint { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); z-index: 1; color: rgba(255,255,255,0.6); animation: bob 2.2s ease-in-out infinite; }
+      .scroll-hint svg { width: 26px; height: 26px; }
+      @keyframes bob { 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,8px)} }
+
+      .wave { position: absolute; left: 0; right: 0; bottom: -1px; z-index: 1; width: 100%; height: 96px; display: block; color: var(--bg); }
+
+      /* ============ Sections ============ */
+      main { display: block; position: relative; }
+      .section { padding: var(--space-section) 0; }
+      .section.alt { position: relative; }
+      .section.alt::before {
+        content: ""; position: absolute; inset: 0; z-index: -1;
+        background: color-mix(in srgb, var(--brand) 6%, transparent);
+        border-block: 1px solid var(--line);
       }
 
-      h1 {
-        max-width: 760px;
-        margin: 0;
-        font-size: clamp(3rem, 9vw, 7.8rem);
-        line-height: 0.9;
-        letter-spacing: 0;
+      .section-head { max-width: 720px; margin: 0 0 clamp(36px, 5vw, 56px); }
+      .kicker {
+        display: inline-flex; align-items: center; gap: 10px; margin: 0 0 16px;
+        font-family: Inter, sans-serif; font-size: 0.76rem; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: var(--brand);
       }
+      .kicker::before { content: ""; width: 30px; height: 2px; border-radius: 2px; background: var(--accent); }
+      .section h2 { margin: 0; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.03; letter-spacing: -0.6px; }
+      .section-head p { margin: 18px 0 0; font-size: 1.1rem; color: var(--muted); }
 
-      .hero p {
-        max-width: 600px;
-        margin: 22px 0 28px;
-        color: rgba(255, 255, 255, 0.88);
-        font-size: clamp(1.05rem, 2vw, 1.25rem);
-      }
+      .grid { display: grid; gap: clamp(16px, 2vw, 24px); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .grid.two { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); }
 
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .button {
-        display: inline-flex;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-        padding: 11px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        font-weight: 800;
-        text-decoration: none;
-      }
-
-      .button.primary {
-        border-color: #ffffff;
-        background: #ffffff;
-        color: var(--brand-blue);
-      }
-
-      main {
-        display: grid;
-        gap: 0;
-      }
-
-      section {
-        padding: clamp(42px, 7vw, 84px) clamp(18px, 4vw, 54px);
-        scroll-margin-top: 78px;
-      }
-
-      section:nth-child(even) {
-        background: var(--brand-blue-soft);
-      }
-
-      .wrap {
-        width: min(1120px, calc(100vw - clamp(18px, 4vw, 54px) * 2));
-        margin: 0 auto;
-      }
-
-      .section-head {
-        display: flex;
-        gap: 24px;
-        align-items: end;
-        justify-content: space-between;
-        margin-bottom: 24px;
-      }
-
-      h2 {
-        margin: 0;
-        font-size: clamp(2rem, 4vw, 3.35rem);
-        line-height: 1;
-        letter-spacing: 0;
-      }
-
-      .section-head p {
-        max-width: 460px;
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
+      /* ============ Cards (glass + pointer glow) ============ */
       .card {
-        min-width: 0;
-        min-height: 100%;
-        padding: 22px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel);
-        box-shadow: 0 10px 28px rgba(30, 74, 177, 0.08);
+        position: relative; padding: clamp(22px, 3vw, 30px); border-radius: var(--radius);
+        background: var(--glass); border: 1px solid var(--glass-border);
+        backdrop-filter: blur(var(--glass-blur)) saturate(1.4); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+        box-shadow: var(--shadow-sm); overflow: hidden;
+        transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+      }
+      /* pointer-tracking highlight */
+      .card::after {
+        content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s var(--ease); pointer-events: none;
+        background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--brand) 22%, transparent), transparent 60%);
+      }
+      /* top accent line */
+      .card::before {
+        content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+        background: linear-gradient(90deg, var(--brand), var(--accent));
+        transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease);
+      }
+      .card:hover { transform: translateY(-8px) scale(1.012); box-shadow: var(--shadow-lg); border-color: color-mix(in srgb, var(--brand) 45%, var(--glass-border)); }
+      .card:hover::after { opacity: 1; }
+      .card:hover::before { transform: scaleX(1); }
+
+      .card-icon {
+        display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 20px; border-radius: 15px;
+        background: color-mix(in srgb, var(--brand) 16%, transparent); color: var(--brand);
+        transition: transform 0.45s var(--ease-bounce), background 0.3s var(--ease);
+      }
+      .card:hover .card-icon { transform: translateY(-3px) rotate(-6deg) scale(1.08); background: color-mix(in srgb, var(--brand) 24%, transparent); }
+      .card-icon svg { width: 26px; height: 26px; }
+      .card h3 { margin: 0 0 12px; font-size: 1.3rem; line-height: 1.2; }
+      .card p, .card ul { margin: 0; color: var(--muted); position: relative; }
+      .card ul { padding-left: 18px; display: grid; gap: 9px; }
+      .card ul li::marker { color: var(--brand); }
+
+      .badge {
+        display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; padding: 7px 13px; border-radius: 999px;
+        background: color-mix(in srgb, var(--gold) 22%, transparent); color: var(--brand-ink); font-size: 0.82rem; font-weight: 700;
+      }
+      :root[data-theme="dark"] .badge { color: var(--gold-soft); }
+
+      /* hours */
+      .hours-card { display: grid; gap: 0; }
+      .hour-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); transition: background 0.25s var(--ease); }
+      .hour-row:last-child { border-bottom: 0; }
+      .hour-row.today { margin: 0 -14px; padding: 14px; border-radius: 13px; border-bottom: 0; background: color-mix(in srgb, var(--brand) 14%, transparent); }
+      .hour-day { font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 9px; }
+      .hour-time { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+      .today-tag { font-family: Inter, sans-serif; font-size: 0.64rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: var(--brand); padding: 3px 8px; border-radius: 6px; }
+
+      /* table */
+      .table-card { padding: 0; overflow: hidden; }
+      .table-card h3 { padding: clamp(22px,3vw,28px) clamp(22px,3vw,30px) 0; }
+      .table-card > p { padding: 6px clamp(22px,3vw,30px) 18px; color: var(--muted); margin: 0; }
+      table { width: 100%; border-collapse: collapse; }
+      thead th { background: linear-gradient(135deg, var(--teal-2), var(--teal)); color: #fff; font-family: Inter, sans-serif; font-size: 0.82rem; font-weight: 700; text-align: left; padding: 14px clamp(20px,3vw,30px); }
+      thead th:not(:first-child) { text-align: right; }
+      tbody td { padding: 14px clamp(20px,3vw,30px); border-bottom: 1px solid var(--line); color: var(--muted); transition: background 0.2s var(--ease); }
+      tbody td:first-child { font-weight: 600; color: var(--ink); }
+      tbody td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+      tbody tr:last-child td { border-bottom: 0; }
+      tbody tr:hover td { background: color-mix(in srgb, var(--brand) 7%, transparent); }
+
+      /* contact / map */
+      .contact-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(16px,2vw,24px); align-items: stretch; }
+      .contact-list { display: grid; gap: 11px; margin-top: 22px; }
+      .contact-list a { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface-2); text-decoration: none; transition: transform 0.3s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+      .contact-list a:hover { transform: translateX(6px); border-color: var(--brand); background: var(--surface); box-shadow: var(--shadow-sm); }
+      .contact-list .ci { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 12px; background: color-mix(in srgb, var(--brand) 15%, transparent); color: var(--brand); transition: transform 0.4s var(--ease-bounce); }
+      .contact-list a:hover .ci { transform: rotate(-8deg) scale(1.06); }
+      .contact-list .ci svg { width: 20px; height: 20px; }
+      .contact-list .ct { display: grid; min-width: 0; }
+      .contact-list .ct .lbl { font-size: 0.72rem; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; }
+      .contact-list .ct .val { font-weight: 700; color: var(--ink); overflow-wrap: anywhere; }
+      .map-card { padding: 7px; overflow: hidden; }
+      .map { width: 100%; height: 100%; min-height: 380px; border: 0; border-radius: calc(var(--radius) - 8px); display: block; }
+      :root[data-theme="dark"] .map { filter: invert(0.92) hue-rotate(180deg) brightness(0.95) contrast(0.95); }
+
+      /* ============ Footer ============ */
+      .footer { position: relative; padding: clamp(56px,7vw,80px) 0 34px; background: radial-gradient(900px 320px at 80% 0%, color-mix(in srgb, var(--teal) 35%, transparent), transparent 60%), var(--navy); color: rgba(255, 255, 255, 0.8); overflow: hidden; }
+      .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(28px,4vw,48px); padding-bottom: 38px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+      .footer-brand { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
+      .footer-brand img { width: 58px; height: 58px; border-radius: 13px; background: #fff; padding: 5px; }
+      .footer .fn { font-weight: 900; font-size: 1.34rem; color: #fff; }
+      .footer p { margin: 0; max-width: 38ch; line-height: 1.7; }
+      .footer h4 { margin: 0 0 16px; font-family: Inter, sans-serif; font-size: 0.8rem; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold-soft); }
+      .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+      .footer a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.2s var(--ease), padding-left 0.25s var(--ease); }
+      .footer ul a:hover { color: #fff; padding-left: 5px; }
+      .footer-bottom { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; padding-top: 26px; font-size: 0.86rem; color: rgba(255, 255, 255, 0.62); }
+      .footer-social { display: flex; gap: 10px; }
+      .footer-social a { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; transition: background 0.25s var(--ease), transform 0.35s var(--ease-bounce); }
+      .footer-social a:hover { background: rgba(255, 255, 255, 0.14); transform: translateY(-3px) rotate(-6deg); }
+      .footer-social svg { width: 19px; height: 19px; }
+
+      /* ============ Reveal ============ */
+      .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+      .reveal.in { opacity: 1; transform: none; }
+      .reveal[data-d="1"] { transition-delay: 0.1s; }
+      .reveal[data-d="2"] { transition-delay: 0.2s; }
+      .reveal[data-d="3"] { transition-delay: 0.3s; }
+
+      /* ============ Responsive ============ */
+      @media (max-width: 900px) {
+        .header { grid-template-columns: auto 1fr; }
+        .nav { grid-column: 1 / -1; order: 3; justify-content: flex-start; padding-top: 4px; }
+        .grid, .grid.two, .contact-band { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+        .footer-brand-col { grid-column: 1 / -1; }
+      }
+      @media (max-width: 540px) {
+        .hero-actions { display: grid; }
+        .btn { width: 100%; }
+        .footer-grid { grid-template-columns: 1fr; }
+        .hero { margin-top: -72px; }
       }
 
-      .card h3 {
-        margin: 0 0 12px;
-        font-size: 1.25rem;
-      }
-
-      .card p,
-      .card ul {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .card ul {
-        padding-left: 20px;
-      }
-
-      .hours {
-        display: grid;
-        gap: 10px;
-      }
-
-      .hour-row {
-        display: grid;
-        grid-template-columns: 130px 1fr;
-        gap: 14px;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .hour-row:last-child {
-        border-bottom: 0;
-      }
-
-      .hour-row strong {
-        color: var(--deep);
-      }
-
-      .permit-list {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-        gap: 16px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        overflow: hidden;
-        border-radius: 8px;
-        background: #fff;
-        table-layout: fixed;
-      }
-
-      th,
-      td {
-        padding: 12px;
-        border-bottom: 1px solid var(--line);
-        text-align: left;
-        vertical-align: top;
-      }
-
-      th {
-        background: var(--brand-blue);
-        color: #fff;
-        font-size: 0.88rem;
-      }
-
-      td {
-        color: var(--muted);
-        overflow-wrap: anywhere;
-      }
-
-      .contact-band {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.62fr);
-        gap: 18px;
-        align-items: stretch;
-      }
-
-      .map {
-        min-height: 320px;
-        border: 0;
-        border-radius: 8px;
-        filter: saturate(0.95);
-      }
-
-      .contact-actions {
-        display: grid;
-        gap: 10px;
-        margin-top: 18px;
-      }
-
-      .contact-actions a {
-        display: flex;
-        gap: 10px;
-        min-height: 46px;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 14px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #fff;
-        font-weight: 800;
-        text-decoration: none;
-      }
-
-      .contact-actions span {
-        min-width: 0;
-        overflow-wrap: anywhere;
-      }
-
-      footer {
-        padding: 28px clamp(18px, 4vw, 54px);
-        background: var(--brand-blue-dark);
-        color: rgba(255, 255, 255, 0.76);
-      }
-
-      footer .wrap {
-        display: flex;
-        gap: 14px;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-
-      footer a {
-        color: #ffffff;
-      }
-
-      @media (max-width: 860px) {
-        .controlbar {
-          grid-template-columns: 1fr auto;
-        }
-
-        .brand-place {
-          display: none;
-        }
-
-        .nav {
-          grid-column: 1 / -1;
-          justify-content: start;
-          order: 3;
-        }
-
-        .hero {
-          min-height: 720px;
-          padding-top: 92px;
-        }
-
-        .section-head,
-        .contact-band,
-        .permit-list {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
-
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .action {
-          padding-inline: 10px;
-        }
-
-        .hero-actions {
-          display: grid;
-        }
-
-        .button {
-          width: 100%;
-        }
-
-        .hour-row {
-          grid-template-columns: 1fr;
-          gap: 4px;
-        }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal, .enter { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+        .ambient span, .status-pill.open .status-led::after, .scroll-hint, .eyebrow .dot { animation: none !important; }
       }
     </style>
   </head>
-  <body>
-    <header class="controlbar" aria-label="Seitensteuerung">
-      <a class="brand" href="#top" aria-label="Zum Seitenanfang">
-        <img class="brand-logo" src="assets./cache_2856943.jpg.png" alt="Alles Angeln Logo">
+
+  <body id="top">
+    <div class="ambient" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+    <a class="skip-link" href="#zeiten">Zum Inhalt springen</a>
+
+    <header class="header" id="header" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Alles Angeln – Seitenanfang">
+        <img class="brand-logo" src="assets/logo.png" alt="Alles Angeln Logo – Marlin">
         <span class="brand-copy">
-          <strong>Alles Angeln</strong>
+          <span class="brand-name">Alles Angeln</span>
           <span class="brand-place">Ratzeburg</span>
         </span>
       </a>
+
       <nav class="nav" aria-label="Abschnitte">
         <a href="#zeiten">Öffnungszeiten</a>
         <a href="#koeder">Lebendköder</a>
@@ -446,187 +467,378 @@
         <a href="#anfahrt">Anfahrt</a>
         <a href="#aktuelles">Aktuelles</a>
       </nav>
-      <a class="action" href="tel:+4945418030565">Anrufen</a>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Farbschema wechseln" title="Hell / Dunkel">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a class="btn btn-primary call-btn" href="tel:+4945418030565">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Anrufen
+        </a>
+      </div>
     </header>
 
-    <div id="top" class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Angelgeschäft in Ratzeburg</p>
-        <h1>Alles Angeln</h1>
-        <p>
-          Köder, Zubehör und Erlaubnisscheine für Ratzeburger Seen, Trave und Kleinen Mustiner See.
-          Direkt in der Großen Wallstraße 4.
+    <section class="hero" aria-label="Willkommen">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-inner wrap">
+        <p class="eyebrow enter"><span class="dot"></span> Angelgeschäft · seit Jahren in Ratzeburg</p>
+        <h1 class="enter d1">Alles fürs <span class="accent">Angeln.</span><br>Direkt am Wasser.</h1>
+        <p class="hero-lead enter d2">
+          Köder, Zubehör und Erlaubnisscheine für die Ratzeburger Seen, die Trave und den
+          Kleinen Mustiner See – mit ehrlicher Beratung von Angler zu Angler.
         </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#zeiten">Heute planen</a>
-          <a class="button" href="mailto:Info@allesangeln-rz.de">E-Mail schreiben</a>
-          <a class="button" href="#anfahrt">Route ansehen</a>
+        <div class="hero-actions enter d3">
+          <a class="btn btn-gold" href="#scheine">Erlaubnisscheine ansehen</a>
+          <a class="btn btn-ghost" href="#anfahrt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Route &amp; Anfahrt
+          </a>
+        </div>
+        <div class="status-pill enter d4" id="statusPill" role="status" aria-live="polite">
+          <span class="status-led"></span>
+          <span id="statusText">Öffnungszeiten werden geprüft …</span>
+          <span class="status-detail" id="statusDetail"></span>
         </div>
       </div>
-    </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </div>
+
+      <svg class="wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0,50 C180,96 360,96 540,66 C720,38 900,0 1080,8 C1260,16 1350,54 1440,62 L1440,96 L0,96 Z"></path>
+      </svg>
+    </section>
 
     <main>
-      <section id="zeiten">
+      <!-- Öffnungszeiten -->
+      <section class="section" id="zeiten">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
+            <p class="kicker">Wann wir da sind</p>
             <h2>Öffnungszeiten</h2>
-            <p>Für Einkauf, Beratung und Abholung ist der Laden werktags mit Mittagspause geöffnet.</p>
+            <p>Werktags mit Mittagspause geöffnet – für Einkauf, Beratung und Abholung. Der heutige Tag ist hervorgehoben.</p>
           </div>
-          <div class="grid">
-            <article class="card">
-              <h3>Montag bis Freitag</h3>
-              <div class="hours">
-                <div class="hour-row"><strong>Vormittag</strong><span>09:00 bis 13:00 Uhr</span></div>
-                <div class="hour-row"><strong>Nachmittag</strong><span>15:00 bis 18:00 Uhr</span></div>
+          <div class="grid two">
+            <article class="card reveal">
+              <div class="hours-card" id="hoursCard">
+                <div class="hour-row" data-day="1"><span class="hour-day">Montag</span><span class="hour-time">09:00–13:00 · 15:00–18:00</span></div>
+                <div class="hour-row" data-day="2"><span class="hour-day">Dienstag</span><span class="hour-time">09:00–13:00 · 15:00–18:00</span></div>
+                <div class="hour-row" data-day="3"><span class="hour-day">Mittwoch</span><span class="hour-time">09:00–13:00 · 15:00–18:00</span></div>
+                <div class="hour-row" data-day="4"><span class="hour-day">Donnerstag</span><span class="hour-time">09:00–13:00 · 15:00–18:00</span></div>
+                <div class="hour-row" data-day="5"><span class="hour-day">Freitag</span><span class="hour-time">09:00–13:00 · 15:00–18:00</span></div>
+                <div class="hour-row" data-day="6"><span class="hour-day">Samstag</span><span class="hour-time">09:00–14:00</span></div>
+                <div class="hour-row" data-day="0"><span class="hour-day">Sonntag</span><span class="hour-time">Geschlossen</span></div>
               </div>
             </article>
-            <article class="card">
-              <h3>Samstag</h3>
-              <div class="hours">
-                <div class="hour-row"><strong>Geöffnet</strong><span>09:00 bis 14:00 Uhr</span></div>
+            <article class="card reveal" data-d="1">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
               </div>
-            </article>
-            <article class="card">
-              <h3>Schneller Kontakt</h3>
-              <p>Bei Fragen zu Verfügbarkeit, Ködern oder Scheinen einfach kurz im Laden anrufen.</p>
+              <h3>Kurz anrufen lohnt sich</h3>
+              <p>Fragen zu Verfügbarkeit, Ködern oder Scheinen? Ein kurzer Anruf vor der Tour spart den Weg und sichert die Ware.</p>
+              <a class="btn btn-outline" style="margin-top:20px" href="tel:+4945418030565">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+                04541 8030565
+              </a>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="koeder">
+      <!-- Lebendköder -->
+      <section class="section alt" id="koeder">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
+            <p class="kicker">Frisch &amp; lebendig</p>
             <h2>Lebendköder</h2>
-            <p>Viele gängige Lebendköder sind vorrätig, Spezialköder können vorher bestellt werden.</p>
+            <p>Viele gängige Lebendköder sind vorrätig – Spezialköder gibt es auf Vorbestellung, passend zu Gewässer und Zielfisch.</p>
           </div>
           <div class="grid">
-            <article class="card">
-              <h3>Vor Ort</h3>
+            <article class="card reveal">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c4-5 14-5 18 0-4 5-14 5-18 0z"/><circle cx="16" cy="12" r="1" fill="currentColor"/></svg>
+              </div>
+              <h3>Vor Ort verfügbar</h3>
               <ul>
                 <li>Lebendköder in vielen Arten</li>
-                <li>Beratung passend zu Gewässer und Zielfisch</li>
+                <li>Beratung zu Gewässer &amp; Zielfisch</li>
+                <li>Zubehör für jede Methode</li>
               </ul>
             </article>
-            <article class="card">
+            <article class="card reveal" data-d="1">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4l1.5 12.5a2 2 0 0 0 2 1.5h9a2 2 0 0 0 2-1.5L20 7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+              </div>
               <h3>Auf Bestellung</h3>
               <p>Speziallebendköder wie Wattwürmer sind nach vorheriger Bestellung erhältlich.</p>
+              <span class="badge">Wattwürmer auf Bestellung</span>
             </article>
-            <article class="card">
-              <h3>Abholen</h3>
-              <p>Für sichere Verfügbarkeit am besten vor der Tour telefonisch nachfragen.</p>
+            <article class="card reveal" data-d="2">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M3 8h18"/></svg>
+              </div>
+              <h3>Vorher reservieren</h3>
+              <p>Für sichere Verfügbarkeit am besten kurz vor der Tour telefonisch nachfragen – dann liegt alles bereit.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="scheine">
+      <!-- Erlaubnisscheine -->
+      <section class="section" id="scheine">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
+            <p class="kicker">Legal ans Wasser</p>
             <h2>Erlaubnisscheine</h2>
-            <p>Im Laden gibt es Angelkarten für mehrere regionale Gewässer. Angaben zu Preisen ohne Gewähr.</p>
+            <p>Angelkarten für mehrere regionale Gewässer – direkt im Laden. Preisangaben ohne Gewähr.</p>
           </div>
-          <div class="permit-list">
-            <article class="card">
+          <div class="grid two">
+            <article class="card reveal">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13l2 2 4-4"/></svg>
+              </div>
               <h3>Erhältliche Scheine</h3>
               <ul>
-                <li>Angelscheine für die Ratzeburger Seen</li>
-                <li>Angelscheine für die Trave, 28 Tage und Jahreskarten</li>
-                <li>Angelerlaubnisschein für den Kleinen Mustiner See</li>
+                <li>Angelscheine für die <strong>Ratzeburger Seen</strong></li>
+                <li>Trave – <strong>28-Tage-</strong> und <strong>Jahreskarten</strong></li>
+                <li>Erlaubnisschein für den <strong>Kleinen Mustiner See</strong></li>
               </ul>
+              <span class="badge">Jahreskarten verfügbar</span>
             </article>
-            <div class="card">
+            <article class="card table-card reveal" data-d="1">
               <h3>Kleiner Mustiner See</h3>
+              <p>Preise für Erwachsene und Jugendliche.</p>
               <table>
                 <thead>
-                  <tr>
-                    <th>Karte</th>
-                    <th>Erwachsene</th>
-                    <th>Jugendliche</th>
-                  </tr>
+                  <tr><th scope="col">Karte</th><th scope="col">Erwachsene</th><th scope="col">Jugendliche</th></tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Tageskarte</td>
-                    <td>7,50 EUR</td>
-                    <td>5,00 EUR</td>
-                  </tr>
-                  <tr>
-                    <td>Wochenkarte</td>
-                    <td>35,00 EUR</td>
-                    <td>25,00 EUR</td>
-                  </tr>
-                  <tr>
-                    <td>2 Wochenkarten</td>
-                    <td>65,00 EUR</td>
-                    <td>45,00 EUR</td>
-                  </tr>
+                  <tr><td>Tageskarte</td><td>7,50&nbsp;€</td><td>5,00&nbsp;€</td></tr>
+                  <tr><td>Wochenkarte</td><td>35,00&nbsp;€</td><td>25,00&nbsp;€</td></tr>
+                  <tr><td>2 Wochen</td><td>65,00&nbsp;€</td><td>45,00&nbsp;€</td></tr>
                 </tbody>
               </table>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="anfahrt">
+      <!-- Anfahrt -->
+      <section class="section alt" id="anfahrt">
         <div class="wrap">
-          <div class="section-head">
-            <h2>Anfahrt</h2>
-            <p>Der Laden liegt zentral in Ratzeburg und ist direkt über die Großen Wallstraße erreichbar.</p>
+          <div class="section-head reveal">
+            <p class="kicker">So findet ihr uns</p>
+            <h2>Anfahrt &amp; Kontakt</h2>
+            <p>Zentral in Ratzeburg, direkt über die Große Wallstraße erreichbar.</p>
           </div>
           <div class="contact-band">
-            <article class="card">
-              <h3>Hier finden Sie mich</h3>
-              <p>
-                Alles Angeln<br>
-                Große Wallstr. 4<br>
-                23909 Ratzeburg
-              </p>
-              <div class="contact-actions">
-                <a href="tel:+4945418030565"><span>04541 8030565</span><span>Telefon</span></a>
-                <a href="mailto:Info@allesangeln-rz.de"><span>Info@allesangeln-rz.de</span><span>E-Mail</span></a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Alles%20Angeln%20Gro%C3%9Fe%20Wallstr.%204%2023909%20Ratzeburg"><span>Route öffnen</span><span>Karte</span></a>
+            <article class="card reveal">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3>Alles Angeln</h3>
+              <p>Inh. Malte Stapelfeldt<br>Große Wallstr. 4<br>23909 Ratzeburg</p>
+              <div class="contact-list">
+                <a href="tel:+4945418030565">
+                  <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+                  <span class="ct"><span class="lbl">Telefon</span><span class="val">04541 8030565</span></span>
+                </a>
+                <a href="mailto:Info@allesangeln-rz.de">
+                  <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                  <span class="ct"><span class="lbl">E-Mail</span><span class="val">Info@allesangeln-rz.de</span></span>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Alles%20Angeln%20Gro%C3%9Fe%20Wallstr.%204%2023909%20Ratzeburg" target="_blank" rel="noopener">
+                  <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20 3 17V4l6 3 6-3 6 3v13l-6-3-6 3z"/><path d="M9 7v13M15 4v13"/></svg></span>
+                  <span class="ct"><span class="lbl">Karte</span><span class="val">Route in Google Maps öffnen</span></span>
+                </a>
               </div>
             </article>
-            <iframe
-              class="map"
-              title="Karte: Alles Angeln in Ratzeburg"
-              loading="lazy"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=10.7446%2C53.6979%2C10.7559%2C53.7036&layer=mapnik&marker=53.69879%2C10.77560"
-            ></iframe>
+            <article class="card map-card reveal" data-d="1">
+              <iframe
+                class="map"
+                title="Karte: Alles Angeln, Große Wallstr. 4, Ratzeburg"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=10.7446%2C53.6979%2C10.7559%2C53.7036&layer=mapnik&marker=53.69879%2C10.77560"
+              ></iframe>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="aktuelles">
+      <!-- Aktuelles -->
+      <section class="section" id="aktuelles">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
+            <p class="kicker">Aus dem Laden</p>
             <h2>Aktuelles</h2>
-            <p>Kurze Hinweise aus dem Laden, damit die nächste Tour schnell vorbereitet ist.</p>
+            <p>Kurze Hinweise, damit die nächste Tour schnell vorbereitet ist.</p>
           </div>
           <div class="grid">
-            <article class="card">
+            <article class="card reveal">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </div>
               <h3>Jahreskarten</h3>
-              <p>Jahreskarten für Ratzeburger Seen, Kleinen Mustiner See und Trave sind erhältlich.</p>
+              <p>Jahreskarten für die Ratzeburger Seen, den Kleinen Mustiner See und die Trave sind erhältlich.</p>
             </article>
-            <article class="card">
+            <article class="card reveal" data-d="1">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4l1.5 12.5a2 2 0 0 0 2 1.5h9a2 2 0 0 0 2-1.5L20 7z"/><path d="M12 7V3M9 7a3 3 0 0 1 3-3 3 3 0 0 1 3 3"/></svg>
+              </div>
               <h3>Geschenkkorb</h3>
-              <p>Ein Geschenkkorb mit Angelzubehör ist eine gute Idee für Anglerinnen und Angler.</p>
+              <p>Immer eine gute Idee: ein Geschenkkorb mit Angelzubehör – für Anglerinnen und Angler.</p>
             </article>
-            <article class="card">
+            <article class="card reveal" data-d="2">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 6-4 9 0s6 4 9 0"/><path d="M3 18c3-4 6-4 9 0s6 4 9 0"/></svg>
+              </div>
               <h3>Wattwürmer</h3>
-              <p>Wattwürmer sind auf Bestellung erhältlich. Bitte rechtzeitig nachfragen.</p>
+              <p>Wattwürmer sind auf Bestellung erhältlich – bitte rechtzeitig nachfragen.</p>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
+    <footer class="footer">
       <div class="wrap">
-        <span>© Malte Stapelfeldt · Alles Angeln</span>
-        <a href="https://www.facebook.com/Alles-Angeln-Ratzeburg-1133588586664678/?fref=ts">Facebook</a>
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div class="footer-brand">
+              <img src="assets/logo.png" alt="Alles Angeln Logo">
+              <span class="fn">Alles Angeln</span>
+            </div>
+            <p>Dein Angelgeschäft in Ratzeburg – Köder, Zubehör und Erlaubnisscheine für die Gewässer der Region. Inh. Malte Stapelfeldt.</p>
+          </div>
+          <div>
+            <h4>Seite</h4>
+            <ul>
+              <li><a href="#zeiten">Öffnungszeiten</a></li>
+              <li><a href="#koeder">Lebendköder</a></li>
+              <li><a href="#scheine">Erlaubnisscheine</a></li>
+              <li><a href="#anfahrt">Anfahrt</a></li>
+              <li><a href="#aktuelles">Aktuelles</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="tel:+4945418030565">04541 8030565</a></li>
+              <li><a href="mailto:Info@allesangeln-rz.de">Info@allesangeln-rz.de</a></li>
+              <li>Große Wallstr. 4<br>23909 Ratzeburg</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> Malte Stapelfeldt · Alles Angeln Ratzeburg</span>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/Alles-Angeln-Ratzeburg-1133588586664678/?fref=ts" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
+
+    <script>
+      // ----- Theme toggle (persisted) -----
+      (function () {
+        var root = document.documentElement, saved = null;
+        try { saved = localStorage.getItem("aa-theme"); } catch (e) {}
+        if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+        document.getElementById("themeToggle").addEventListener("click", function () {
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var current = root.getAttribute("data-theme");
+          if (current === "auto") current = prefersDark ? "dark" : "light";
+          var next = current === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("aa-theme", next); } catch (e) {}
+        });
+      })();
+
+      // ----- Sticky header -----
+      var header = document.getElementById("header");
+      var onScroll = function () { header.classList.toggle("is-stuck", window.scrollY > 12); };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // ----- Footer year -----
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // ----- Hero parallax -----
+      (function () {
+        var bg = document.getElementById("heroBg");
+        if (!bg || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        window.addEventListener("scroll", function () {
+          var y = window.scrollY;
+          if (y < 900) bg.style.transform = "scale(1.08) translateY(" + (y * 0.18) + "px)";
+        }, { passive: true });
+      })();
+
+      // ----- Pointer-tracking card glow -----
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        document.querySelectorAll(".card").forEach(function (card) {
+          card.addEventListener("pointermove", function (e) {
+            var r = card.getBoundingClientRect();
+            card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
+            card.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100) + "%");
+          });
+        });
+      })();
+
+      // ----- Live "open now" status -----
+      (function () {
+        var schedule = {
+          1: [[540, 780], [900, 1080]], 2: [[540, 780], [900, 1080]], 3: [[540, 780], [900, 1080]],
+          4: [[540, 780], [900, 1080]], 5: [[540, 780], [900, 1080]], 6: [[540, 840]], 0: []
+        };
+        var dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+        var pill = document.getElementById("statusPill"), text = document.getElementById("statusText"), detail = document.getElementById("statusDetail");
+        function fmt(min) { var h = Math.floor(min / 60), m = min % 60; return (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m); }
+        function nextOpenDay(from) { for (var i = 1; i <= 7; i++) { var d = (from + i) % 7; if (schedule[d] && schedule[d].length) return { day: d, slot: schedule[d][0] }; } return null; }
+        function update() {
+          var now = new Date(), day = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
+          var slots = schedule[day] || [], openNow = null, nextToday = null;
+          for (var i = 0; i < slots.length; i++) {
+            if (mins >= slots[i][0] && mins < slots[i][1]) { openNow = slots[i]; break; }
+            if (mins < slots[i][0] && !nextToday) nextToday = slots[i];
+          }
+          if (openNow) { pill.className = "status-pill open enter d4"; text.textContent = "Jetzt geöffnet"; detail.textContent = "· bis " + fmt(openNow[1]) + " Uhr"; }
+          else if (nextToday) { pill.className = "status-pill closed enter d4"; text.textContent = "Gerade geschlossen"; detail.textContent = "· heute wieder ab " + fmt(nextToday[0]) + " Uhr"; }
+          else { pill.className = "status-pill closed enter d4"; text.textContent = "Gerade geschlossen"; var n = nextOpenDay(day); detail.textContent = n ? "· " + dayNames[n.day] + " ab " + fmt(n.slot[0]) + " Uhr" : ""; }
+        }
+        update(); setInterval(update, 60000);
+
+        var todayRow = document.querySelector('.hour-row[data-day="' + new Date().getDay() + '"]');
+        if (todayRow) { todayRow.classList.add("today"); var tag = document.createElement("span"); tag.className = "today-tag"; tag.textContent = "Heute"; todayRow.querySelector(".hour-day").appendChild(tag); }
+      })();
+
+      // ----- Scroll reveal -----
+      (function () {
+        var els = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+        els.forEach(function (el) { io.observe(el); });
+      })();
+
+      // ----- Active nav link (scrollspy) -----
+      (function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll(".nav a")), map = {};
+        links.forEach(function (a) { var id = a.getAttribute("href").slice(1); if (document.getElementById(id)) map[id] = a; });
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { links.forEach(function (l) { l.classList.remove("active"); }); if (map[e.target.id]) map[e.target.id].classList.add("active"); }
+          });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        Object.keys(map).forEach(function (id) { spy.observe(document.getElementById(id)); });
+      })();
+    </script>
   </body>
 </html>
